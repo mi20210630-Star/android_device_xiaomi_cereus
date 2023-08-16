@@ -24,6 +24,30 @@ PRODUCT_COPY_FILES += \
 # Inherit proprietary parts
 $(call inherit-product, vendor/xiaomi/cereus/cereus-vendor.mk)
 
+MINIMEDIA_SENSORSERVER_DISABLE := 1 
+
+PRODUCT_PACKAGES += \
+    libmedia_omx \ 
+    android.frameworks.displayservice@1.0 
+
+PRODUCT_PACKAGES += \ 
+    libion \ 
+    libmedia_compat_layer \ 
+    libsf_compat_layer \ 
+    libui_compat_layer 
+
+# SalifishOS droidmedia 
+PRODUCT_PACKAGES += \ 
+    libdroidmedia \ 
+    minimediaservice \ 
+    minisfservice \ 
+    miniafservice 
+
+# Ubuntu 
+PRODUCT_PACKAGES += \ 
+    libbiometry_fp_api \ 
+    libubuntu_application_api
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
